@@ -1,34 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../providers/AuthProvider';
+ import useAuth from '../../../hooks/useAuth';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../../assets/loggo.png'
 
 const Navbar = () => {
-  const { user, signOutUser } = useContext(AuthContext) || {} ;
+  const { user, signOutUser } = useAuth() || {} ;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const [userData, setUserData] = useState(null);
   const [photo, setPhoto]= useState(userData?.user?.photoURL);
-  const [userName, setUserName] = useState(userData?.user?.name);
+  const [userName, setUserName] = useState(userData?.user?.displayName);
   // console.log(user);
   // console.log(userData);
 
-  useEffect(() => {
 
-    document.querySelector('html').setAttribute('data-theme', theme);
-    // Store the theme in localStorage
-    localStorage.setItem('theme', theme);
-  }, [theme]);
 
-  const toggleTheme = () => {
-    // Toggle between dark and light theme
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
+      setUserData(null);
+      setPhoto(null);
+      setUserName(null);
         console.log("User Sign Out Successfully");
       })
       .catch(error => {
@@ -40,7 +33,7 @@ const Navbar = () => {
 
    useEffect(() => {
     if(user?.email) { 
-      fetch(`https://localhost:6000/user?email=${user.email}`)
+      fetch(`${import.meta.env.VITE_API_URL}/user?email=${user.email}`)
       .then(response => {
         if(!response.ok) { 
           throw new Error('Failed to fetch user data');
@@ -49,8 +42,8 @@ const Navbar = () => {
       })
       .then(data => {
         setUserData(data);
-        setPhoto(data.user.photoURL);
-        setUserName(data.user.name);
+        setPhoto(data.user?.photoURL);
+        setUserName(data.user?.displayName);
         //console.log(data);
       })
       .catch(error => {
@@ -62,11 +55,11 @@ const Navbar = () => {
    }, [user])
 
   return (
-    <div className="bg-[#274b7b] text-white">
+    <div className="bg-orange-300 text-white">
       {/* Welcome Message */}
       {userData && (
         <div className="text-center mt-2 text-lg font-semibold">
-          Welcome, <span className="text-gray-400">{userName  || 'User'}</span>
+          Welcome, <span className="text-orange-400">{user.displayName  || 'User'}</span>
         </div>
       )}
 
@@ -79,28 +72,7 @@ const Navbar = () => {
         </div>
         <div>
         <div className="navbar-end">
-        <label className="swap swap-rotate">
-          {/* This hidden checkbox controls the theme state */}
-          <input type="checkbox" onChange={toggleTheme} checked={theme === 'dark'} />
-
-          {/* Sun Icon */}
-          <svg
-            className="swap-on fill-current w-8 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5.64 17.65 4.22 19.07l1.41 1.41 1.42-1.42-1.41-1.41zM12 22h-2v-2h2v2zm7.07-4.93-1.41 1.41 1.42 1.42 1.41-1.41-1.42-1.42zM17.65 5.64l1.41-1.41-1.42-1.42-1.41 1.42 1.42 1.41zM22 12h-2v-2h2v2zm-4.93-7.07L19.07 4.22l-1.42-1.41-1.41 1.42 1.42 1.41zM12 2h-2v2h2V2zM6.34 6.34 4.22 4.22 2.81 5.64l1.41 1.42L6.34 6.34zm0 11.31-1.42 1.42L4.22 19.07l1.41-1.42 1.42 1.42zM2 12H0v2h2v-2zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
-          </svg>
-
-          {/* Moon Icon */}
-          <svg
-            className="swap-off fill-current w-8 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21.91 13.94A9 9 0 0 1 12 4a8.76 8.76 0 0 0-1.89.2 9 9 0 1 0 11.8 9.74z" />
-          </svg>
-        </label>
+        
       </div>
         </div>
         </div>
@@ -124,19 +96,19 @@ const Navbar = () => {
           <NavLink to="/" className="block lg:inline hover:underline">
             Home
           </NavLink>
-          <NavLink to="/all-visas" className="block lg:inline hover:underline">
-            All Visas
+          <NavLink to="/all-artifacts" className="block lg:inline hover:underline">
+          All Artifacts
           </NavLink>
           {user && (
             <>
-              <NavLink to="/add-visa" className="block lg:inline hover:underline">
-                Add Visa
+              <NavLink to="/add-artifacts" className="block lg:inline hover:underline">
+              Add Artifacts
               </NavLink>
-              <NavLink to="/my-added-visa" className="block lg:inline hover:underline">
-                My Added Visas
+              <NavLink to="/my-added-artifacts" className="block lg:inline hover:underline">
+              My Artifacts
               </NavLink>
               <NavLink to="/my-visa-application" className="block lg:inline hover:underline">
-                My Visa Applications
+                My Liked Artifacts 
               </NavLink>
               <NavLink to="/profile" className="block lg:inline hover:underline">
                 Profile
@@ -158,11 +130,11 @@ const Navbar = () => {
               <img
                 className="w-8 h-8 rounded-full"
                 // src={user? user.photoURL : userData.user.photoURL} // Use default placeholder if no image is available
-                src={photo} 
+                src={user.photoURL} 
                 alt="User"
               />
 
-              <span>{user.name || user.email}</span>
+              <span>{user.displayName || user.email}</span>
               <button
                 onClick={handleSignOut}
                 className="btn text-black hover:bg-zinc-100 px-4 py-2 rounded-lg"
@@ -172,7 +144,7 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <NavLink to="/login" className="hover:underline">
+              <NavLink to="/signIn" className="hover:underline">
                 Login
               </NavLink>
               <NavLink to="/register" className="hover:underline">

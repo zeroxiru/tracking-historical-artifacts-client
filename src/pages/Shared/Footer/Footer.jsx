@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <div className="footer bg-neutral text-neutral-content p-10">
+            <div className="footer bg-orange-200 text-amber-900 p-10">
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
@@ -40,7 +40,7 @@ const Footer = () => {
                     </fieldset>
                 </form>
             </div>
-            <div className="footer bg-base-300 text-base-content items-center p-4 ">
+            <div className="footer bg-orange-200 text-base-content items-center p-4 ">
                 <aside className="grid-flow-col items-center">
                     <svg
                         width="36"

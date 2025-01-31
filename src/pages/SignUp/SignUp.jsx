@@ -64,10 +64,10 @@ const SignUp = () => {
 
   return (
     <div className='flex justify-center items-center min-h-screen bg-white'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-400 text-gray-900'>
+      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-orange-200 text-amber-900'>
         <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
-          <p className='text-sm text-black font-bold'>Welcome to Scholarship Management System Portal</p>
+          <h1 className='my-3 text-4xl font-bold text-amber-800'>Sign Up</h1>
+          <p className='text-sm text-black font-bold text-amber-800'>Welcome to Tracking Historical Artifacts Portal</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
@@ -148,7 +148,7 @@ const SignUp = () => {
           <div>
             <button
               type='submit'
-              className='bg-slate-500 w-full rounded-md py-3 text-white'
+              className='bg-amber-700 w-full rounded-md py-3 text-white'
               disabled={loading}
             >
               {loading ? (
@@ -170,7 +170,7 @@ const SignUp = () => {
 
         <div
           onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 rounded cursor-pointer'
+          className='flex justify-center items-center space-x-2 border m-3 p-2 border-amber-600 rounded cursor-pointer'
         >
           <FcGoogle size={32} />
           <p>Continue with Google</p>
@@ -179,7 +179,7 @@ const SignUp = () => {
         <p className='px-6 text-sm text-center text-gray-400'>
           Already have an account?{' '}
           <Link
-            to='/login'
+            to='/signIn'
             className='hover:underline hover:text-slate-500 text-gray-600'
           >
             Login
