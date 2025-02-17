@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
         { 
           await axios.post(
             `${import.meta.env.VITE_API_URL}/users/${currentUser?.email}`,{ 
-  
+            uid: currentUser?.uid,  
             name: currentUser?.displayName  || 'Anonymous User', 
             image: currentUser?.photoURL ||"Image is N/A",
             email:currentUser?.email,

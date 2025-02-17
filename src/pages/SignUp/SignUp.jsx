@@ -124,9 +124,9 @@ const SignUp = () => {
             </div>
 
             {/* Password Field */}
-            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
+            <div className=" border-gray-300 bg-gray-200">
+                                <label className="label ">
+                                    <span className="label-text ">Password</span>
                                 </label>
                                 <input type="password" {...register("password", {
                                     required: true,
@@ -134,7 +134,7 @@ const SignUp = () => {
                                     maxLength: 20,
                                     pattern: /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).+$/
 
-                                })} placeholder="password" className="input input-bordered" />
+                                })} placeholder="password" className="input input-bordered border-gray-300 focus:outline-slate-500 bg-gray-200" />
                                 {errors.password?.type === 'required' && <span className='text-red-500'>Password is required</span>}
                                 {errors.password?.type === 'minLength' && <span className='text-red-500'>Password must be 6 characters</span>}
                                 {errors.password?.type === 'maxLength' && <span className='text-red-500'>Password must be less then 20 characters</span>}

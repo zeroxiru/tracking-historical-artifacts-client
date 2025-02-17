@@ -35,15 +35,18 @@ const AddArtifacts = () => {
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/addArtifact`, {
                 ...formData,
-                likeCount: 0
+                likesCount: 0
             });
             toast.success('Artifact added successfully!');
+            console.log(formData);
             
-            setTimeout(() => navigate('/all-artifacts'), 2000);
+            setTimeout(() => navigate('/all-artifacts'), 1000);
         } catch (error) {
             toast.error('Failed to add artifact. Please try again.');
         }
+
     };
+    
 
     return (
         <div className="text-center py-10">

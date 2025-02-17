@@ -13,6 +13,9 @@ import ArtifactsDetailsPage from "../pages/ArtifactsDetailsPage/ArtifactsDetails
 import BookingDetails from "../pages/BookingDetails/BookingDetails";
 import Profile from "../pages/Profile";
 import About from "../pages/Common/About";
+import PrivateRoutes from "./PrivateRoutes";
+import MyLikedArtifacts from "../pages/MyLikedArtifacts/MyLikedArtifacts";
+import MyArtifacts from "../pages/MyArtifacts/MyArtifacts";
 
 
   export const router = createBrowserRouter([
@@ -38,7 +41,9 @@ import About from "../pages/Common/About";
         },
         {
           path: '/add-artifacts',
-          element: <AddArtifacts></AddArtifacts>
+          element: <PrivateRoutes>
+            <AddArtifacts></AddArtifacts>
+          </PrivateRoutes>
         }
         ,
         {
@@ -47,11 +52,29 @@ import About from "../pages/Common/About";
         },
         {
           path: '/profile',
-          element: <Profile  ></Profile >
+          element: <PrivateRoutes><Profile  ></Profile ></PrivateRoutes>
         },
         {
           path: '/about',
           element: <About  ></About >
+        },
+        {
+          path: '/artifacts/:id',
+          element:
+             <ArtifactsDetailsPage  ></ArtifactsDetailsPage >
+         
+        },
+        {
+          path: '/my-liked-artifacts',
+          element:<PrivateRoutes>
+             <MyLikedArtifacts></MyLikedArtifacts >
+          </PrivateRoutes>
+        },
+        {
+          path: '/my-artifacts',
+          element:<PrivateRoutes>
+             <MyArtifacts></MyArtifacts >
+          </PrivateRoutes>
         },
        ]
     },

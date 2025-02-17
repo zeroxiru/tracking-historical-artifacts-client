@@ -23,11 +23,12 @@ const useAxiosSecure = () => {
           // logout
           logOut()
           // navigate to login
-          navigate('/login')
+          navigate('/signIn')
         }
         return Promise.reject(error)
       }
     )
+    
   }, [logOut, navigate])
   return axiosSecure
 }

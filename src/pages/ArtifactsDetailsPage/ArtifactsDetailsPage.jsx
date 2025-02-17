@@ -16,7 +16,7 @@ const ArtifactDetailsPage = () => {
   const navigate = useNavigate();
 
   // Redirect if user is not authenticated
-  if (!user) navigate('/login');
+
 
   const { data: artifact = {}, isLoading, refetch } = useQuery({
     queryKey: ['artifact', id],
@@ -25,13 +25,13 @@ const ArtifactDetailsPage = () => {
       return data;
     },
   });
-
-  const [likeCount, setLikeCount] = useState(artifact.likeCount || 0);
+  console.log(artifact);
+  const [likesCount, setLikesCount] = useState(artifact.likesCount || 0);
 
   const handleLike = async () => {
     try {
-      await axiosSecure.patch(`/artifacts/${id}/like`);
-      setLikeCount(prevCount => prevCount + 1);
+      await axiosSecure.patch(`${import.meta.env.VITE_API_URL}/artifacts/${id}/like`);
+      setLikesCount(prevCount => prevCount + 1);
       toast.success('You liked this artifact!');
       refetch();
     } catch (error) {
@@ -42,50 +42,63 @@ const ArtifactDetailsPage = () => {
 
   if (isLoading) return <LoadingSpinner />;
 
-  const { name, origin, artifactType, description, imageUrl } = artifact;
-
+  const { name, imageUrl, artifactType, historicalContext, discoveredAt, discoveredBy, presentLocation } = artifact;
+  console.log(artifact);
   return (
-<div>
-      <Helmet>
-        <title>Artifact Details</title>
-      </Helmet>
-      <div className="flex flex-col lg:flex-row justify-between gap-8 w-full">
-        {/* Image Section */}
-        <div className="w-full overflow-hidden rounded-xl">
-          <img
-            className="object-cover w-full h-64"
-            src={imageUrl}
-            alt={name}
-          />
-        </div>
-        {/* Details Section */}
-        <div className="flex-1">
-          <div title={name} center />
-          <hr className="my-6" />
-          <p className="text-lg text-gray-700">
-            <strong>Origin:</strong> {origin}
-          </p>
-          <hr className="my-4" />
-          <p className="text-lg text-gray-700">
-            <strong>Type:</strong> {artifactType}
-          </p>
-          <hr className="my-4" />
-          <p className="text-lg text-gray-700">
-            <strong>Description:</strong> {description}
-          </p>
-          <hr className="my-6" />
-          <div className="flex justify-between items-center">
-            <button
-              onClick={handleLike}
-              className="btn btn-primary text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              👍 Like ({likeCount})
-            </button>
-          </div>
-        </div>
+<div class="container mx-auto p-6">
+  <Helmet>
+    <title>Artifact Details</title>
+  </Helmet>
+
+  <div class="flex flex-col lg:flex-row justify-between gap-8 w-full items-center lg:items-start">
+
+    <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl shadow-xl">
+      <img
+        class="object-cover w-full h-72 sm:h-80 md:h-96"
+        src={imageUrl}
+        alt={name}
+      />
+    </div>
+
+ 
+    <div class="flex-1 text-left lg:pl-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">{name}</h1>
+      <hr class="my-4 border-gray-300" />
+      <p class="text-lg text-gray-700">
+        <strong>Present Location:</strong> {presentLocation}
+      </p>
+      <hr class="my-4 border-gray-300" />
+      <p class="text-lg text-gray-700">
+        <strong>Type:</strong> {artifactType}
+      </p>
+      <hr class="my-4 border-gray-300" />
+      <p class="text-lg text-gray-700">
+        <strong>Description:</strong> {historicalContext}
+      </p>
+      <hr class="my-4 border-gray-300" />
+      <p class="text-lg text-gray-700">
+        <strong>Discover At :</strong> {discoveredAt}
+      </p>
+      <hr class="my-4 border-gray-300" />
+      <p class="text-lg text-gray-700">
+        <strong>Discover By :</strong> {discoveredBy}
+      </p>
+      <hr class="my-6 border-gray-300" />
+
+      <div class="flex justify-start items-center gap-4">
+        <button
+          onClick={handleLike}
+          class="btn btn-success hover:bg-blue-600 text-white px-6 py-3 rounded-xl shadow-md focus:outline-none"
+        >
+          👍 Like ({likesCount})
+        </button>
       </div>
-      <ToastContainer />
-      </div>
+    </div>
+  </div>
+
+  <ToastContainer />
+</div>
+
    
   );
 };

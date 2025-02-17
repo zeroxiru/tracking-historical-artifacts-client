@@ -4,6 +4,7 @@ import CallToActionSection from '../../CallToActionSection/CallToActionSection';
 import AppointmentHome from '../../Appointments/AppointmentHome ';
 import axios from 'axios';
 import FeaturedArtifacts from '../../../components/FeaturedArtifacts';
+import CuratorsSection from '../../curators/CuratorsSection';
 
 const Home = () => {
     const [appointments, setAppointments] = useState([]);
@@ -25,6 +26,8 @@ const Home = () => {
             <Banner></Banner>
             <FeaturedArtifacts></FeaturedArtifacts>
             <CallToActionSection></CallToActionSection>
+            <CuratorsSection></CuratorsSection>
+
             <AppointmentHome appointments={appointments}></AppointmentHome>
         </div>
     );
