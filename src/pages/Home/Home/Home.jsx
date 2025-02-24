@@ -28,7 +28,7 @@ const Home = () => {
             <CallToActionSection></CallToActionSection>
             <CuratorsSection></CuratorsSection>
 
-            <AppointmentHome appointments={appointments}></AppointmentHome>
+            {/* <AppointmentHome appointments={appointments}></AppointmentHome> */}
         </div>
     );
 };
