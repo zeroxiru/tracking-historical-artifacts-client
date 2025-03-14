@@ -23,7 +23,7 @@ const Home = () => {
       }, []);
     return (
         <div className='mt-10'>
-            <Banner></Banner>
+            
             <FeaturedArtifacts></FeaturedArtifacts>
             <CallToActionSection></CallToActionSection>
             <CuratorsSection></CuratorsSection>

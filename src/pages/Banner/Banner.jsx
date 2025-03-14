@@ -9,7 +9,7 @@ import BannerFive from '../../assets/Banner_5.png';
 
 const Banner = () => {
   return (
-    <div className=" w-10/12  mx-auto overflow-hidden">
+    <div className=" w-full  mx-auto overflow-hidden">
     <Carousel>
       <Carousel.Item>
         <img

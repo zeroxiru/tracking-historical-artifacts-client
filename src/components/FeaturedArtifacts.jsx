@@ -25,7 +25,7 @@ const FeaturedArtifacts = () => {
 
     return (
         <div>
-            <section className="py-12">
+            <section className="py-2">
                 <h2 className="text-2xl font-bold text-center mb-8">Featured Artifacts</h2>
                 {artifacts.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 object-cover rounded-md">
