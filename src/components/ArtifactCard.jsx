@@ -62,7 +62,7 @@ const ArtifactCard = ({ artifact, refetch }) => {
       <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row lg:flex-wrap xl:flex-wrap 2xl:flex-wrap justify-between items-center gap-2 mt-auto">
   <button
     onClick={handleLike}
-    className="btn btn-success text-white px-4 py-2 rounded bg-amber-800 hover:bg-amber-700 w-full sm:w-full md:w-full lg:w-auto xl:w-auto"
+    className="btn-amber-900 text-white px-4 py-2 rounded bg-amber-800 hover:bg-amber-700 w-full sm:w-full md:w-full lg:w-auto xl:w-auto"
   >
     👍 Like ({likeCount})
   </button>

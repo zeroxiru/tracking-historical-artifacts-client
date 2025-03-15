@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Input Theme */
 .input-theme {
-    @apply input input-bordered w-full bg-white dark:bg-gray-800 text-black dark:text-white;
-  }
+  @apply input input-bordered w-full bg-white dark:bg-gray-800 text-black dark:text-white;
+}
+
+/* Default styling for light and dark themes */
+html {
+  color-scheme: light dark; /* Tells the browser to respect the user's light/dark mode preference */
+}
+
+body {
+  @apply bg-white text-black; /* Default light mode styles */
+}
+
+/* Dark Mode Styles */
+.dark body {
+  @apply bg-gray-900 text-white; /* Dark mode background and text colors */
+}
+
+button {
+  @apply bg-white dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600;
+}
