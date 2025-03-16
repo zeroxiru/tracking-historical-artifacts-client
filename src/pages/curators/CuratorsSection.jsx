@@ -29,7 +29,7 @@ const CuratorsSection = () => {
 
   return (
     <section className="py-12 text-center bg-white">
-      <h2 className="text-4xl font-bold">Professional Team of Curators</h2>
+      <h2 className="text-4xl font-bold text-amber-900">Professional Team of Curators</h2>
       <p className="text-gray-500 max-w-2xl mx-auto mt-3">
         The role that curators play, like the art they care for, is constantly evolving.
       </p>

@@ -50,9 +50,9 @@ const AddArtifacts = () => {
 
     return (
         <div className="text-center py-10">
-            <h2 className="text-blue-900 font-bold text-4xl mb-6 ">Add Artifact</h2>
+            <h2 className="text-amber-900 font-bold text-4xl mb-6 ">Add Artifact</h2>
 
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-base-200 p-8 rounded-lg">
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-gray-500 p-8 rounded-lg">
                 <div className="mb-4">
                     <label className="block text-left mb-2 font-medium">Artifact Name</label>
                     <input
@@ -60,7 +60,7 @@ const AddArtifacts = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         required
                     />
                 </div>
@@ -72,7 +72,7 @@ const AddArtifacts = () => {
                         name="imageUrl"
                         value={formData.imageUrl}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         required
                     />
                 </div>
@@ -83,7 +83,7 @@ const AddArtifacts = () => {
                         name="artifactType"
                         value={formData.artifactType}
                         onChange={handleInputChange}
-                        className="select select-bordered w-full"
+                        className="select select-bordered w-full text-black"
                         required
                     >
                         <option value="">Select Artifact Type</option>
@@ -101,7 +101,7 @@ const AddArtifacts = () => {
                         name="historicalContext"
                         value={formData.historicalContext}
                         onChange={handleInputChange}
-                        className="textarea textarea-bordered w-full"
+                        className="textarea textarea-bordered w-full text-black"
                         required
                     ></textarea>
                 </div>
@@ -114,7 +114,7 @@ const AddArtifacts = () => {
                         name="createdAt"
                         value={formData.createdAt}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         placeholder="e.g., 100 BC or 1500 AD"
                         pattern="^(?:(\d{1,4} (BC|AD))|\d{1,4})$"
                         title='Enter a year like "100 BC" or "1500"'
@@ -131,7 +131,7 @@ const AddArtifacts = () => {
                         name="discoveredAt"
                         value={formData.discoveredAt}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         placeholder='Enter a year (e.g., "1799" or "100 BC")'
                         title='Enter a valid year like "1799" or "100 BC"'
                         required
@@ -145,7 +145,7 @@ const AddArtifacts = () => {
                         name="discoveredBy"
                         value={formData.discoveredBy}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         placeholder="Name of discoverer (e.g., John Doe)"
                         required
                     />
@@ -159,7 +159,7 @@ const AddArtifacts = () => {
                         name="presentLocation"
                         value={formData.presentLocation}
                         onChange={handleInputChange}
-                        className="input input-bordered w-full"
+                        className="input input-bordered w-full text-black"
                         required
                     />
                 </div>
@@ -170,7 +170,7 @@ const AddArtifacts = () => {
                         type="text"
                         value={formData.adderName}
                         readOnly
-                        className="input input-bordered w-full bg-gray-200"
+                        className="input input-bordered w-full bg-gray-200 text-black"
                     />
                 </div>
 
@@ -180,11 +180,11 @@ const AddArtifacts = () => {
                         type="email"
                         value={formData.adderEmail}
                         readOnly
-                        className="input input-bordered w-full bg-gray-200"
+                        className="input input-bordered w-full bg-gray-200 text-black"
                     />
                 </div>
 
-                <button type="submit" className="btn bg-yellow-800 text-black w-full input-bordered mt-4">
+                <button type="submit" className="btn-amber-800 text-black w-2/4 input-bordered mt-4 ">
                     Add Artifact
                 </button>
             </form>

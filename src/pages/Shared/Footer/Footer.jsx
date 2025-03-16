@@ -1,45 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
-            <div className="footer bg-orange-200 text-amber-900 p-10">
-                <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </nav>
-                <nav>
-                    <h6 className="footer-title">Legal</h6>
-                    <a className="link link-hover">Terms of use</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
-                </nav>
-                <form>
-                    <h6 className="footer-title">Newsletter</h6>
-                    <fieldset className="form-control w-80">
-                        <label className="label">
-                            <span className="label-text">Enter your email address</span>
-                        </label>
-                        <div className="join">
-                            <input
-                                type="text"
-                                placeholder="username@site.com"
-                                className="input input-bordered join-item" />
-                            <button className="btn btn-active join-item">Subscribe</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+        <footer className='w-full bg-orange-200 text-amber-900 p-10  '>
+         <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
+    {/* Services */}
+    <nav className="flex flex-col space-y-2">
+        <h6 className="footer-title font-semibold text-lg">Services</h6>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/all-artifacts">All Artifacts</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/add-artifacts">Add Artifacts</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/artifacts/bookingDetails">Booking Details</Link>
+    </nav>
+
+    {/* Company */}
+    <nav className="flex flex-col space-y-2">
+        <h6 className="footer-title font-semibold text-lg">Company</h6>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/about">About Us</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/profile">Profile</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/my-artifacts">My Artifacts</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/my-liked-artifacts">My Liked Artifacts</Link>
+    </nav>
+
+    {/* Authentication */}
+    <nav className="flex flex-col space-y-2">
+        <h6 className="footer-title font-semibold text-lg">Authentication</h6>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/signIn">Sign In</Link>
+        <Link className="text-gray-900 hover:text-gray-700 font-semibold" to="/register">Sign Up</Link>
+    </nav>
+
+    {/* Newsletter */}
+    <form className="flex flex-col space-y-3">
+        <h6 className="footer-title font-semibold text-lg">Newsletter</h6>
+        <label className="text-gray-500">Enter your email address</label>
+        <div className="flex space-x-2">
+            <input type="email" placeholder="username@site.com" className="input input-bordered w-full p-2 rounded-lg" />
+            <button className="btn bg-amber-600 text-white px-4 py-2 rounded-lg">Subscribe</button>
+        </div>
+    </form>
+</div>
             <div className="footer bg-orange-200 text-base-content items-center p-4 ">
                 <aside className="grid-flow-col items-center">
                     <svg

@@ -60,7 +60,7 @@ const BookingDetails = () => {
   return (
     <div className="min-h-screen bg-neutral-100 flex flex-col items-center py-10">
       <div className="w-full max-w-4xl bg-white p-8 rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Book an Appointment</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center text-amber-900">Book an Appointment</h2>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
@@ -123,9 +123,11 @@ const BookingDetails = () => {
             required
             className="textarea textarea-bordered w-full md:col-span-2"
           />
-          <button type="submit" className="btn btn-primary w-full md:col-span-2">
+         <div className="w-full flex justify-center md:col-span-2">
+         <button type="submit" className=" bg-amber-800 text-white rounded px-4 py-2 md:col-span-2">
             Book Appointment
           </button>
+         </div>
         </form>
 
         <h3 className="text-xl font-bold mt-8">Appointment List:</h3>

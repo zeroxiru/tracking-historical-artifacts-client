@@ -9,7 +9,7 @@ import BannerFive from '../../assets/Banner_5.png';
 
 const Banner = () => {
   return (
-    <div className=" w-full  mx-auto overflow-hidden">
+    <div className=" w-full  mx-auto overflow-hidden ">
     <Carousel>
       <Carousel.Item>
         <img
@@ -18,8 +18,8 @@ const Banner = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className='font-bold text-3xl'>Your New Art World</h3>
-          <p>Art Gallery Society Event: Christmas Eve in the Art Gallery</p>
+          <h3 className='font-bold text-3xl text-black'>Your New Art World</h3>
+          <p className='text-black text-xl'>Art Gallery Society Event: Christmas Eve in the Art Gallery</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -29,8 +29,8 @@ const Banner = () => {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3 className='font-bold text-3xl'>Eclectic Collection</h3>
-          <p>Today the THA's has a leading collection of modern and contemporary art comprising works by international artists which reflects the energy, commitment and diversity of emerging artists.</p>
+          <h3 className='font-bold text-3xl text-white'>Eclectic Collection</h3>
+          <p className='text-white text-xl'>Today the THA's has a leading collection of modern and contemporary art comprising works by international artists which reflects the energy, commitment and diversity of emerging artists.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,8 +40,8 @@ const Banner = () => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3 className='font-bold text-3xl'>Diversity of Thoughts</h3>
-          <p>Welcome to our range of Original Paintings, Limited and Open Edition Framed Prints and Edge Sculpture. Our gallery presents an extensive selection of wall art, images and frames.</p>
+          <h3 className='font-bold text-3xl text-black'>Diversity of Thoughts</h3>
+          <p className='text-black text-xl'>Welcome to our range of Original Paintings, Limited and Open Edition Framed Prints and Edge Sculpture. Our gallery presents an extensive selection of wall art, images and frames.</p>
         </Carousel.Caption>
       </Carousel.Item>
        {/* banner 4 */}
@@ -52,8 +52,8 @@ const Banner = () => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3 className='font-bold text-3xl'>Your New Art World</h3>
-          <p >Art Gallery Society Event: Christmas Eve in the Art Gallery</p>
+          <h3 className='font-bold text-3xl text-white'>Your New Art World</h3>
+          <p className='text-white text-xl' >Art Gallery Society Event: Christmas Eve in the Art Gallery</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* banner 5 */}
@@ -64,8 +64,8 @@ const Banner = () => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3 className='font-bold text-3xl'>Eclectic Collection</h3>
-          <p>Welcome to our range of Original Paintings, Limited and Open Edition Framed Prints and Edge Sculpture. Our gallery presents an extensive selection of wall art, images and frames.</p>
+          <h3 className='font-bold text-3xl text-white'>Eclectic Collection</h3>
+          <p className='text-white text-xl'>Welcome to our range of Original Paintings, Limited and Open Edition Framed Prints and Edge Sculpture. Our gallery presents an extensive selection of wall art, images and frames.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

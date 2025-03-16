@@ -30,7 +30,11 @@ const Navbar = () => {
     { name: "Home", link: "/" },
     { name: "All Artifacts", link: "/all-artifacts" },
     { name: "Add Artifacts", link: "/add-artifacts", auth: true },
-    { name: "About Us", link: "/about" }
+    { name: "About Us", link: "/about" },
+    { name: "Booking Details", link: "/artifacts/bookingDetails" },
+    { name: "Profile", link: "/profile", auth: true },
+    { name: "My Artifacts", link: "/my-artifacts", auth: true },
+    { name: "My Liked Artifacts", link: "/my-liked-artifacts", auth: true }
   ];
 
   const activeLink = "text-secondary";
@@ -107,17 +111,9 @@ const Navbar = () => {
         ))}
         
         {user ? (
-          <>
-            <NavLink to="/my-artifacts" className="block px-4 py-2 text-white hover:bg-gray-600" onClick={() => setIsMenuOpen(false)}>
-              My Artifacts
-            </NavLink>
-            <NavLink to="/my-liked-artifacts" className="block px-4 py-2 text-white hover:bg-gray-600" onClick={() => setIsMenuOpen(false)}>
-              My Liked Artifacts
-            </NavLink>
-            <button onClick={handleSignOut} className="block px-4 py-2 text-white hover:bg-gray-600">
-              Sign Out
-            </button>
-          </>
+          <button onClick={handleSignOut} className="block px-4 py-2 text-white hover:bg-gray-600">
+            Sign Out
+          </button>
         ) : (
           <>
             <NavLink to="/signIn" className="block px-4 py-2 text-white hover:bg-gray-600" onClick={() => setIsMenuOpen(false)}>

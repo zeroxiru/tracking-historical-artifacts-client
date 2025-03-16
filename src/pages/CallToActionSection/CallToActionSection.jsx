@@ -23,7 +23,7 @@ const CallToActionSection = () => {
   console.log(actions);
   return (
     <div className="bg-neutral-100 py-10">
-      <h2 className="text-2xl sm:text-4xl font-bold text-center mb-6"> 
+      <h2 className="text-2xl sm:text-4xl font-bold text-center text-amber-900 mb-6"> 
         Discover More About Our Museum
       </h2>
       <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -40,7 +40,7 @@ const CallToActionSection = () => {
             />
              
             <div className="absolute inset-0 bg-orange-100 bg-opacity-40 flex flex-col justify-center items-center text-white p-6">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4">{action.title}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-amber-900">{action.title}</h3>
               <button className="border border-white px-6 py-2 hover:bg-white hover:text-black rounded-xl"
                onClick={() => navigate(action.path)}>
                 {action.buttonText}
