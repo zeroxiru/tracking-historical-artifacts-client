@@ -11,7 +11,7 @@ const Banner = () => {
   return (
     <div className=" w-full  mx-auto overflow-hidden ">
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
         <img
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
           src={BannerOne}
@@ -22,7 +22,7 @@ const Banner = () => {
           <p className='text-black text-xl'>Art Gallery Society Event: Christmas Eve in the Art Gallery</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
         <img
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
           src={BannerTwo}
@@ -33,7 +33,7 @@ const Banner = () => {
           <p className='text-white text-xl'>Today the THA's has a leading collection of modern and contemporary art comprising works by international artists which reflects the energy, commitment and diversity of emerging artists.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
         <img
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
           src={BannerThree}
@@ -45,7 +45,7 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
        {/* banner 4 */}
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
         <img
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
           src={BannerFour}
@@ -57,7 +57,7 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
       {/* banner 5 */}
-      <Carousel.Item>
+      <Carousel.Item interval={3000}>
         <img
           className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover"
           src={BannerFive}

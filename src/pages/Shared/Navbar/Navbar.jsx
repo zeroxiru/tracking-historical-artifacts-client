@@ -47,9 +47,11 @@ const Navbar = () => {
         {/* Nav Start - Logo & Theme Toggle */}
         <div className="flex items-center gap-3 ">
           <img className="w-10 h-10 rounded-full" src={logo} alt="Logo" />
-          <ModeToggle />
+          <div>
+        <ModeToggle />
         </div>
-        
+        </div>
+       
         {/* Nav Center - Navigation Links */}
         <div className="hidden lg:flex space-x-5 ">
           {navLinks.map(({ name, link, auth }) => (
