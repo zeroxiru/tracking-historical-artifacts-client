@@ -48,7 +48,7 @@ import MyArtifacts from "../pages/MyArtifacts/MyArtifacts";
         ,
         {
           path: '/artifacts/bookingDetails',
-          element: <BookingDetails  ></BookingDetails>
+          element:<PrivateRoutes> <BookingDetails  ></BookingDetails></PrivateRoutes>
         },
         {
           path: '/profile',

@@ -31,7 +31,7 @@ const Navbar = () => {
     { name: "All Artifacts", link: "/all-artifacts" },
     { name: "Add Artifacts", link: "/add-artifacts", auth: true },
     { name: "About Us", link: "/about" },
-    { name: "Booking Details", link: "/artifacts/bookingDetails" },
+    { name: "Booking Details", link: "/artifacts/bookingDetails", auth:true },
     { name: "Profile", link: "/profile", auth: true },
     { name: "My Artifacts", link: "/my-artifacts", auth: true },
     { name: "My Liked Artifacts", link: "/my-liked-artifacts", auth: true }
@@ -71,12 +71,12 @@ const Navbar = () => {
         {/* Nav End - Login/Logout */}
         <div className="hidden lg:flex items-center gap-4">
           {user ? (
-            <div className="relative group profile-dropdown">
-              <img className="w-8 h-8 rounded-full cursor-pointer" src={user.photoURL} alt="User" />
-              <span className="absolute left-0 bottom-full mb-1 hidden group-hover:block text-orange-800 text-xs px-2 py-1 rounded-lg shadow-md">
+            <div className="flex  items-center relative group profile-dropdown">
+              <img className="w-8 h-8 rounded-full cursor-pointer relative" src={user.photoURL} alt="User" />
+              <span className="absolute left-1/2 -translate-x-1/2 top-full mb-1 hidden group-hover:block text-orange-800 text-xs px-2 py-1 rounded-lg shadow-md">
                 {user.displayName || user.email}
               </span>
-              <button onClick={handleSignOut} className="btn text-black hover:bg-zinc-700 px-4 py-2 rounded-lg">
+              <button onClick={handleSignOut} className="btn text-black hover:bg-zinc-700 px-4 py-2 rounded-lg border-2 border-gray-300 transition duration-300 hover:border-amber-800">
                 Sign Out
               </button>
             </div>

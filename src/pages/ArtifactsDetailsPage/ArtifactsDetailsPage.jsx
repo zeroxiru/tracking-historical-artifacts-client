@@ -62,25 +62,25 @@ const ArtifactDetailsPage = () => {
 
  
     <div class="flex-1 text-left lg:pl-8">
-      <h1 class="text-3xl font-bold text-gray-800 mb-4">{name}</h1>
+      <h1 class="text-3xl font-bold text-gray-800 mb-4 dark:text-white">{name}</h1>
       <hr class="my-4 border-gray-300" />
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-700 dark:text-white">
         <strong>Present Location:</strong> {presentLocation}
       </p>
       <hr class="my-4 border-gray-300" />
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-700 dark:text-white">
         <strong>Type:</strong> {artifactType}
       </p>
       <hr class="my-4 border-gray-300" />
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-700 dark:text-white">
         <strong>Description:</strong> {historicalContext}
       </p>
       <hr class="my-4 border-gray-300" />
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-700 dark:text-white">
         <strong>Discover At :</strong> {discoveredAt}
       </p>
       <hr class="my-4 border-gray-300" />
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-700 dark:text-white">
         <strong>Discover By :</strong> {discoveredBy}
       </p>
       <hr class="my-6 border-gray-300" />

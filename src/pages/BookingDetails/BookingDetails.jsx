@@ -70,7 +70,7 @@ const BookingDetails = () => {
             value={appointmentData.name}
             onChange={handleInputChange}
             required
-            className="input input-bordered w-full"
+            className="input input-bordered w-full dark:text-white"
           />
           <input
             type="email"
@@ -105,7 +105,7 @@ const BookingDetails = () => {
             value={appointmentData.date}
             onChange={handleInputChange}
             required
-            className="input input-bordered w-full"
+            className="input input-bordered w-full dark:text-black"
           />
           <input
             type="time"
@@ -113,7 +113,7 @@ const BookingDetails = () => {
             value={appointmentData.time}
             onChange={handleInputChange}
             required
-            className="input input-bordered w-full"
+            className="input input-bordered w-full dark:text-black"
           />
           <textarea
             name="purpose"
@@ -121,7 +121,7 @@ const BookingDetails = () => {
             value={appointmentData.purpose}
             onChange={handleInputChange}
             required
-            className="textarea textarea-bordered w-full md:col-span-2"
+            className="textarea textarea-bordered w-full md:col-span-2 dark:text-black"
           />
          <div className="w-full flex justify-center md:col-span-2">
          <button type="submit" className=" bg-amber-800 text-white rounded px-4 py-2 md:col-span-2">

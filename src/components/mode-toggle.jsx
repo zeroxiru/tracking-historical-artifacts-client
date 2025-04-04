@@ -15,29 +15,25 @@ export function ModeToggle() {
   return (
     <DropdownMenu >
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <Button variant="outline" size="icon">
+          {/* Icons update dynamically based on theme */}
+          {theme === "dark" ? (
+            <Moon className="h-[1.2rem] w-[1.2rem] text-white" />
+          ) : (
+            <Sun className="h-[1.2rem] w-[1.2rem] text-black" />
+          )}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-gray-600 rounded">
-        <DropdownMenuItem
-          onClick={() => setTheme("light")}
-          className={theme === 'light' ? 'text-black' : 'text-white'}
-        >
+       {/* Background color fix for visibility */}
+       <DropdownMenuContent align="end" className="bg-gray-400 text-black dark:text-white">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("dark")}
-          className={theme === 'dark' ? 'text-white' : 'text-black'}
-        >
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("system")}
-          className={theme === 'system' ? 'text-black' : theme === 'dark' ? 'text-white' : 'text-black'}
-        >
+        <DropdownMenuItem onClick={() => setTheme("system")}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>

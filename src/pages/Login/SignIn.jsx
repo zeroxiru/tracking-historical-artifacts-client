@@ -66,7 +66,7 @@ const SignIn = () => {
                     <h1 className='my-3 text-4xl font-bold'>Log In</h1>
                     <p className='text-sm text-amber-800 font-bold'>Sign in to access your account</p>
                 </div>
-                <form onSubmit={handleSubmit} noValidate='' action='' className='space-y-6 ng-untouched ng-pristine ng-valid'>
+                <form onSubmit={handleSubmit} noValidate='' action='' className='space-y-6 ng-untouched ng-pristine ng-valid '>
                     <div className='space-y-4'>
                         <div>
                             <label htmlFor='email' className='block mb-2 text-lg font-lg' >Email address</label>
@@ -78,18 +78,18 @@ const SignIn = () => {
                             </div>
                             <input type='password' name='password' autoComplete='current-password' id='password' required placeholder='*******' className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-lime-500 bg-gray-200 text-gray-900' />
                         </div>
-                        <div className="form-control">
-                            <label className="label">
+                        <div className="form-control  border rounded-md">
+                            <label className="label bg-gray-200 border rounded-md">
                                 <LoadCanvasTemplate />
                             </label>
-                            <input type="text" name="Captcha" ref={captchaRef} placeholder="type the text above " className="input input-bordered" required />
-                            <div className='flex justify-center mt-2'>
+                            <input type="text" name="Captcha" ref={captchaRef} placeholder="type the text above " className="input input-bordered bg-gray-200 mt-2 "  required />
+                            <div className='flex justify-center mt-2 bg-gray-200 '>
                             <button onClick={handleValidateCaptcha}  className="btn btn-sm !bg-orange-800 !hover:bg-orange-900 text-white mt-2 ">Validate</button>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <button  type='submit' className='bg-amber-800 w-full rounded-md py-3 text-white'>
+                        <button  type='submit' className='bg-amber-800  hover:bg-amber-800 dark:bg-amber-800 w-full rounded-md py-3 text-white'>
                             {loading ? <TbFidgetSpinner className='animate-spin m-auto' /> : 'Continue'}
                         </button>
                     </div>
